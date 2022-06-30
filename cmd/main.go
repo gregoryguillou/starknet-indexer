@@ -9,7 +9,6 @@ import (
 	indexer "github.com/cartridge-gg/starknet-indexer"
 	_ "github.com/cartridge-gg/starknet-indexer/ent/runtime"
 	"github.com/dontpanicdao/caigo/rpc"
-	"github.com/dontpanicdao/caigo/types"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/rs/zerolog/log"
 )
@@ -36,13 +35,5 @@ func main() {
 
 	indexer.New(cli.Addr, drv, provider, indexer.Config{
 		Interval: 2 * time.Second,
-		Contracts: []indexer.Contract{{
-			Address:    "0x",
-			StartBlock: 1000,
-			Handler: func(types.Transaction) error {
-				// handle transaction
-				return nil
-			},
-		}},
 	})
 }

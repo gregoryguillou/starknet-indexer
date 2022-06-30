@@ -24,9 +24,8 @@ type Contract struct {
 }
 
 type Config struct {
-	Head      uint64
-	Interval  time.Duration
-	Contracts []Contract
+	Head     uint64
+	Interval time.Duration
 }
 
 type Engine struct {
